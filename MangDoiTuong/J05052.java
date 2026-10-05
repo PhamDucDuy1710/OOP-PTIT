@@ -34,7 +34,6 @@ public class J05052 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
-		// ArrayList<DH> a = new ArrayList<>();
 		for(int i = 0; i < n; i++) {
 			String ten = sc.nextLine();
 			String ma = sc.nextLine();
@@ -42,10 +41,6 @@ public class J05052 {
 			long sl = Long.parseLong(sc.nextLine());
 			DH x = new DH(ten, ma, sl, dg);
 			System.out.println(x);
-			// a.add(x);
 		}
-		// Collections.sort(a, (x, y) ->{
-		// 	return x.getStt().compareTo(y.getStt());
-		// });
 	}
 }

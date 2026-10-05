@@ -51,20 +51,28 @@ public class J05079 {
             String maMon = sc.nextLine();
 
             ArrayList<LopHP> tmp = new ArrayList<>();
+
+            // Lọc các lớp thuộc môn cần tìm
             for (LopHP x : ds) {
                 if (x.getMa().equals(maMon)) {
                     tmp.add(x);
                 }
             }
+
+            // Sắp xếp nhóm tăng dần
             Collections.sort(tmp, new Comparator<LopHP>() {
                 @Override
                 public int compare(LopHP a, LopHP b) {
                     return a.getNhom().compareTo(b.getNhom());
                 }
             });
+
+            // In tên môn
             System.out.println(
                 "Danh sach nhom lop mon " + tmp.get(0).getTen() + ":"
             );
+
+            // In nhóm + giảng viên
             for (LopHP x : tmp) {
                 System.out.println(x.getNhom() + " " + x.getGv());
             }

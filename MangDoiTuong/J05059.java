@@ -68,17 +68,25 @@ public class J05059 {
         }
 
         int chiTieu = Integer.parseInt(sc.nextLine());
+
+        // Sắp xếp theo điểm giảm dần
         Collections.sort(a, (x, y) -> {
             if(x.getTong() != y.getTong())
                 return Double.compare(y.getTong(), x.getTong());
 
             return x.getMa().compareTo(y.getMa());
         });
+
+        // Xác định điểm chuẩn
         double diemChuan = a.get(chiTieu - 1).getTong();
 
         System.out.printf("%.1f%n", diemChuan);
+
+        // In kết quả
         for(TS x : a) {
-            System.out.println(x + " " + x.getTt(diemChuan));
+            System.out.println(
+                x + " " + x.getTt(diemChuan)
+            );
         }
     }
 }

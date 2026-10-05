@@ -8,6 +8,9 @@ class MH {
 		this.ma = ma;
 		this.sl = sl;
 	}
+	public String getNhom() {
+		return ma.substring(0,1);
+	}
 	public long getXuat() {
 		if(ma.charAt(0) == 'A') {
 			return Math.round(sl * 0.6);
@@ -41,15 +44,26 @@ class MH {
  	}
 }
 
-public class J05048 {
+public class J05049 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
+		ArrayList<MH> a = new ArrayList<>();
 		for(int i = 0; i < n; i++) {
 			String ma = sc.nextLine();
 			long sl = Long.parseLong(sc.nextLine());
 			MH x = new MH(ma, sl);
-			System.out.println(x);
+			// System.out.println(x);
+			a.add(x);
+		}
+		Collections.sort(a, (x, y) -> {
+			return Long.compare(y.getThue(), x.getThue());
+		});
+		String s = sc.nextLine();
+		for(MH i : a) {
+			if(i.getNhom().equals(s)) {
+				System.out.println(i);
+			}
 		}
 	}
 }

@@ -52,15 +52,22 @@ public class J05054 {
 
             a.add(new HS(i, ten, diem));
         }
+
         ArrayList<HS> b = new ArrayList<>(a);
+
+        // Sắp xếp điểm giảm dần
         b.sort((x, y) -> Double.compare(y.getDiem(), x.getDiem()));
+
+        // Xếp hạng
         for (int i = 0; i < n; i++) {
-            if (i == 0 || b.get(i).getDiem() != b.get(i - 1).getDiem()) { b
+            if (i == 0 || b.get(i).getDiem() != b.get(i - 1).getDiem()) {
                 b.get(i).setHang(i + 1);
             } else {
                 b.get(i).setHang(b.get(i - 1).getHang());
             }
         }
+
+        // In theo thứ tự ban đầu
         for (HS x : a) {
             System.out.println(x);
         }
