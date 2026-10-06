@@ -20,9 +20,7 @@ class GV {
 		return ma;
 	}
 	public String getTen() {
-		String a[] = ten.trim().split("\\s+");
-		String t = a[a.length - 1];
-		return t;
+		return ten.toLowerCase();
 	}
 	@Override
 	public String toString() {

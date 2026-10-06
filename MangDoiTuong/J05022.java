@@ -40,9 +40,11 @@ public class J05022 {
 			System.out.println("DANH SACH SINH VIEN LOP " + s + ":");
 			for(SinhVien i : a) {
 				if(i.getLop().equals(s)) {
+					// System.out.println(i.getLop().substring(1,3));
 					System.out.println(i);
 				}
 			} 
 		}
+		sc.close();
 	}
 }
